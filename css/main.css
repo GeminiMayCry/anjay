@@ -267,6 +267,8 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
+  border-radius: 20px; 
+  overflow: hidden;
 }
 .v3327_20 {
   width: 217px;
