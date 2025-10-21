@@ -3,34 +3,30 @@
 }
 body {
   font-size: 14px;
+  /* PERUBAHAN UTAMA UNTUK BORDER HITAM OTOMATIS */
   margin: 0; 
   padding: 0;
-  overflow-x: hidden; /* Mencegah scroll horizontal */
-  background: black; /* WARNA INI ADALAH "BORDER HITAM" ANDA */
+  overflow-x: hidden;
+  background: black; /* WARNA BORDER LUAR */
+  min-height: 100vh; /* Pastikan body setinggi viewport */
 }
 
-/* ==================================== */
-/* 1. WADAH UTAMA YANG AKAN DISKALAKAN */
-/* Desain Asli: 1440px x 822px */
-/* ==================================== */
-
+/* WADAH UTAMA YANG DISKALAKAN (FIXED SIZE) */
 .v3329_5 {
-  width: 1440px; /* Lebar desain desktop (FIXED) */
-  height: 822px; /* Tinggi desain desktop (FIXED) */
+  width: 1440px; 
+  height: 822px; 
   background: rgba(255,255,255,1);
   opacity: 1;
-  position: absolute;
+  position: fixed; /* DIGANTI DARI absolute ke FIXED */
   top: 0;
   left: 0;
   overflow: hidden;
-  /* Properti penting untuk scaling */
   transform-origin: top left; 
 }
-
-/* 2. BACKGROUNDS (DIJAGA TETAP PADA UKURAN DESAIN) */
+/* BACKGROUNDS (DIUBAH KE UKURAN TETAP 1440x822) */
 .v3327_182 {
-  width: 1440px; 
-  height: 822px; 
+  width: 1440px; /* FIXED SIZE */
+  height: 822px; /* FIXED SIZE */
   background: url("../images/v3327_182.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -42,8 +38,8 @@ body {
   overflow: hidden;
 }
 .v3331_7 {
-  width: 1440px; 
-  height: 822px; 
+  width: 1440px; /* FIXED SIZE */
+  height: 822px; /* FIXED SIZE */
   background: url("../images/v3331_7.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -56,37 +52,40 @@ body {
 }
 
 /* ==================================== */
-/* 3. LOGIKA SKALA DAN PEMUSATAN */
+/* LOGIKA SKALA DAN PEMUSATAN */
 /* ==================================== */
 
-/* Aturan untuk layar yang lebih kecil dari lebar desain (1440px) */
+/* Aturan untuk layar yang lebih kecil atau sama dengan lebar desain (<= 1440px) */
 @media screen and (max-width: 1440px) {
     .v3329_5 {
-        /* Menerapkan Skala: Hitung (Lebar Layar Saat Ini / 1440px) */
-        transform: scale(calc(100vw / 1440));
+        /* Definisikan faktor skala */
+        --scale-factor: calc(100vw / 1440);
+        transform: scale(var(--scale-factor));
         
-        /* Pemusatan Otomatis (Menggunakan margin untuk centering) */
-        margin-left: calc((100vw - (1440px * (100vw / 1440))) / 2);
-        margin-top: calc((100vh - (822px * (100vw / 1440))) / 2);
+        /* PEMUSATAN OTOMATIS */
+        left: calc((100vw - 1440px * var(--scale-factor)) / 2); /* Horizontal */
+        top: calc((100vh - 822px * var(--scale-factor)) / 2);    /* Vertikal */
+        
+        margin-left: 0;
+        margin-top: 0;
     }
 }
 
-/* Aturan untuk layar yang LEBIH BESAR dari 1440px (Memusatkan Tanpa Scaling) */
+/* Aturan untuk layar yang LEBIH BESAR dari 1440px */
 @media screen and (min-width: 1441px) {
     .v3329_5 {
-        /* Nonaktifkan Skala */
         transform: none; 
         
         /* Pusatkan di Layar Besar */
         left: 50%;
-        margin-left: -720px; /* - setengah dari 1440px */
         top: 50%;
-        margin-top: -411px; /* - setengah dari 822px */
+        margin-left: -720px; 
+        margin-top: -411px; 
     }
 }
 
 /* ==================================== */
-/* 4. SEMUA ELEMEN KONTEN LAINNYA (DIBIARKAN DENGAN NILAI PIXEL ASLI) */
+/* SEMUA ELEMEN KONTEN LAINNYA (TETAP MENGGUNAKAN PIXEL ASLI) */
 /* ==================================== */
 
 .v3327_6 {
