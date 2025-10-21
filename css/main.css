@@ -3,78 +3,71 @@
 }
 body {
   font-size: 14px;
+  /* Atur margin 0 dan tinggi 100vh agar memenuhi layar perangkat */
+  margin: 0; 
+  height: 100vh;
 }
 .v3329_5 {
   width: 100%;
-  height: 822px;
+  height: 100%; /* Mengikuti tinggi body (100vh) */
   background: rgba(255,255,255,1);
   opacity: 1;
-  position: absolute;
+  position: relative; /* Ganti absolute menjadi relative */
   top: 0px;
   left: 0px;
   overflow: hidden;
 }
 .v3327_182 {
   width: 100%;
-  height: 826px;
-  background: url("../images/v3327_182.png");
+  height: 100%; /* Mengisi penuh .v3329_5 */
+  /* Hapus properti background yang sudah ada */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
-  position: absolute;
+  position: relative; /* Penting untuk penempatan konten anak */
   top: 0px;
   left: 0px;
   overflow: hidden;
 }
-.v3329_6 {
-  width: 100%;
-  height: 826px;
-  background: url("../images/v3329_6.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+/* ============================================== */
+/* LAPISAN LATAR BELAKANG RESPONSIF + OPASITAS */
+/* ============================================== */
+/* Gunakan pseudo-element untuk menempatkan gambar latar belakang buram */
+.v3327_182::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gunakan gambar asli dari v3327_5.png */
+    background-image: url("../images/v3327_5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Lapisan gelap (Hitam 60%) untuk menenangkan gambar */
+    background-color: rgba(0, 0, 0, 0.6); 
+    background-blend-mode: multiply; /* Kombinasikan warna gelap dengan gambar */
+    z-index: -1; /* Pindahkan ke lapisan paling belakang */
 }
-.v3327_3 {
-  width: 100%;
-  height: 826px;
-  background: rgba(0,0,0,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+
+/* Hapus atau nonaktifkan .v3327_3 dan .v3327_5 yang sudah dihapus di HTML */
+.v3327_3, .v3327_5, .v3329_6 { 
+    display: none; 
 }
-.v3327_5 {
-  width: 100%;
-  height: 817px;
-  background: url("../images/v3327_5.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 4px;
-  left: 3px;
-  border: 10px solid rgba(0,0,0,1);
-  overflow: hidden;
-}
+
+
+/* ============================================== */
+/* HEADER & JUDUL (RESPONSIF) */
+/* ============================================== */
+/* Didasarkan pada desain awal 1440x826px */
 .v3327_6 {
-  width: 100%;
-  height: 67px;
-  background: url("../images/v3327_6.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 97.4%; /* (1402px / 1440px) */
+  height: 8.1%; /* (67px / 826px) */
   position: absolute;
-  top: 26px;
-  left: 19px;
+  top: 3.1%; /* (26px / 826px) */
+  left: 1.3%; /* (19px / 1440px) */
   overflow: hidden;
 }
 .v3327_7 {
@@ -85,230 +78,216 @@ body {
   left: 0px;
   font-family: Inria Serif;
   font-weight: Bold;
-  font-size: 45px;
+  /* Gunakan vw untuk ukuran font agar responsif */
+  font-size: 3.125vw; /* (45px / 1440px) */
   opacity: 1;
   text-align: center;
 }
+
+/* ============================================== */
+/* KOTAK KONTEN 1: Kesimpulan utama (RESPONSIF + BLUR) */
+/* ============================================== */
 .v3327_8 {
-  width: 618px;
-  height: 203px;
-  background: url("../images/v3327_8.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 42.9%; /* (618px / 1440px) */
+  height: 24.5%; /* (203px / 826px) */
   position: absolute;
-  top: 119px;
-  left: 59px;
+  top: 14.4%; /* (119px / 826px) */
+  left: 4.1%; /* (59px / 1440px) */
   overflow: hidden;
 }
 .v3327_9 {
-  width: 618px;
-  height: 203px;
+  width: 100%;
+  height: 100%;
   background: rgba(255,255,255,0.6000000238418579);
+  /* Tambahkan efek BLUR (Frosted Glass) */
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   overflow: hidden;
 }
 .v3327_10 {
-  width: 207px;
+  width: 33.5%; /* (207px / 618px) */
   color: rgba(0,0,0,1);
   position: absolute;
   top: 0px;
-  left: 21px;
+  left: 3.4%; /* (21px / 618px) relatif ke .v3327_8 */
   font-family: Inria Serif;
   font-weight: Regular;
-  font-size: 20px;
+  font-size: 1.39vw; /* (20px / 1440px) */
   opacity: 1;
   text-align: left;
 }
+
+/* ============================================== */
+/* KOTAK KONTEN 2 (RESPONSIF + BLUR) */
+/* ============================================== */
 .v3327_11 {
-  width: 865px;
-  height: 446px;
-  background: url("../images/v3327_11.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 60.1%; /* (865px / 1440px) */
+  height: 54.0%; /* (446px / 826px) */
   position: absolute;
-  top: 348px;
-  left: 58px;
+  top: 42.1%; /* (348px / 826px) */
+  left: 4.0%; /* (58px / 1440px) */
   overflow: hidden;
 }
 .v3327_12 {
-  width: 865px;
-  height: 446px;
+  width: 100%;
+  height: 100%;
   background: rgba(229,229,229,0.6000000238418579);
+  /* Tambahkan efek BLUR (Frosted Glass) */
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   overflow: hidden;
 }
+
+/* ============================================== */
+/* KOTAK KONTEN 3 (RESPONSIF + BLUR) */
+/* ============================================== */
 .v3327_13 {
-  width: 670px;
-  height: 203px;
-  background: url("../images/v3327_13.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 46.5%; /* (670px / 1440px) */
+  height: 24.5%; /* (203px / 826px) */
   position: absolute;
-  top: 119px;
-  left: 709px;
+  top: 14.4%; /* (119px / 826px) */
+  left: 49.2%; /* (709px / 1440px) */
   overflow: hidden;
 }
 .v3327_14 {
-  width: 670px;
-  height: 203px;
+  width: 100%;
+  height: 100%;
   background: rgba(255,255,255,0.6000000238418579);
+  /* Tambahkan efek BLUR (Frosted Glass) */
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   overflow: hidden;
 }
 .v3327_15 {
-  width: 166px;
-  height: 23px;
-  background: url("../images/v3327_15.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 24.8%; /* (166px / 670px) */
+  height: 11.3%; /* (23px / 203px) */
   position: absolute;
-  top: 146px;
-  left: 472px;
+  top: 72.0%; /* (146px / 203px) relatif ke .v3327_13 */
+  left: 70.4%; /* (472px / 670px) relatif ke .v3327_13 */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
 .v3327_16 {
-  width: 166px;
-  height: 23px;
+  width: 100%;
+  height: 100%;
   background: rgba(222,139,6,1);
   opacity: 0.75;
   position: absolute;
   top: 0px;
   left: 0px;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-radius: 100px;
   overflow: hidden;
 }
 .v3327_17 {
-  width: 115px;
+  width: 69.3%; /* (115px / 166px) */
   color: rgba(0,0,0,1);
   position: absolute;
   top: 0px;
-  left: 25px;
+  left: 15.1%; /* (25px / 166px) */
   font-family: Inter;
   font-weight: Medium;
-  font-size: 20px;
+  font-size: 1.39vw; /* (20px / 1440px) */
   opacity: 1;
   text-align: center;
 }
+
+/* ============================================== */
+/* KOTAK KONTEN 4: Radar Chart (RESPONSIF + BLUR) */
+/* ============================================== */
 .v3327_18 {
-  width: 411px;
-  height: 373px;
-  background: url("../images/v3327_18.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 28.5%; /* (411px / 1440px) */
+  height: 45.1%; /* (373px / 826px) */
   position: absolute;
-  top: 342px;
-  left: 968px;
+  top: 41.4%; /* (342px / 826px) */
+  left: 67.2%; /* (968px / 1440px) */
   overflow: hidden;
 }
 .v3327_19 {
-  width: 411px;
-  height: 373px;
+  width: 100%;
+  height: 100%;
   background: rgba(217,217,217,0.6000000238418579);
+  /* Tambahkan efek BLUR (Frosted Glass) */
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
+  border-radius: 20px;
 }
 .v3327_20 {
-  width: 217px;
-  height: 207px;
+  width: 52.8%; /* (217px / 411px) */
+  height: 55.5%; /* (207px / 373px) */
   background: rgba(0,0,0,0.6000000238418579);
   opacity: 1;
   position: absolute;
-  top: 60px;
-  left: 97px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  top: 16.1%; /* (60px / 373px) */
+  left: 23.6%; /* (97px / 411px) */
+  border-radius: 20px;
   overflow: hidden;
 }
 .v3327_21 {
-  width: 411px;
+  width: 100%;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 11px;
+  top: 2.9%; /* (11px / 373px) */
   left: 0px;
   font-family: Inria Serif;
   font-weight: Regular;
-  font-size: 20px;
+  font-size: 1.39vw; /* (20px / 1440px) */
   opacity: 1;
   text-align: center;
 }
+
+/* ============================================== */
+/* BUTTON (RESPONSIF) */
+/* ============================================== */
 .v3327_181 {
-  width: 268px;
-  height: 58px;
-  background: url("../images/v3327_181.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+  width: 18.6%; /* (268px / 1440px) */
+  height: 7.0%; /* (58px / 826px) */
   position: absolute;
-  top: 735px;
-  left: 1043px;
+  top: 89.0%; /* (735px / 826px) */
+  left: 72.4%; /* (1043px / 1440px) */
   overflow: hidden;
 }
 .v3327_180 {
-  width: 268px;
-  height: 58px;
+  width: 100%;
+  height: 100%;
   background: rgba(56,41,25,1);
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-radius: 100px;
   overflow: hidden;
 }
 .name {
   color: #fff;
 }
 .v3327_172 {
-  width: 136px;
+  width: 50.7%; /* (136px / 268px) */
   color: rgba(255,141,40,1);
   position: absolute;
-  top: 16px;
-  left: 96px;
+  top: 27.6%; /* (16px / 58px) */
+  left: 35.8%; /* (96px / 268px) */
   font-family: Roboto;
   font-weight: Medium;
-  font-size: 20px;
+  font-size: 1.39vw; /* (20px / 1440px) */
   opacity: 1;
   text-align: left;
 }
