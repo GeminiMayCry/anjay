@@ -2,11 +2,15 @@
   box-sizing: border-box;
 }
 body {
-  font-size: 14px;
+  /* Hapus font-size default, biarkan browser yang mengatur */
+  /* font-size: 14px; */
 }
+/* Bagian Background Utama (Kontainer Penuh Layar) */
 .v3329_5 {
   width: 100%;
-  height: 822px;
+  /* **PERUBAHAN:** Menggunakan 100vh (100% dari tinggi viewport) untuk responsif */
+  height: 100vh;
+  /* atau Anda bisa menggunakan min-height: 100vh; jika konten Anda panjang */
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
@@ -16,11 +20,12 @@ body {
 }
 .v3327_182 {
   width: 100%;
-  height: 822px;
+  /* **PERUBAHAN:** Menggunakan 100% agar mengikuti parent-nya (v3329_5) */
+  height: 100%;
   background: url("../images/v3327_182.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: cover; /* Sudah bagus untuk skala penuh */
   opacity: 1;
   position: absolute;
   top: 0px;
@@ -29,28 +34,32 @@ body {
 }
 .v3331_7 {
   width: 100%;
-  height: 822px;
+  /* **PERUBAHAN:** Menggunakan 100% agar mengikuti parent-nya (v3329_5) */
+  height: 100%;
   background: url("../images/v3331_7.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: cover; /* Sudah bagus untuk skala penuh */
   opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
   overflow: hidden;
 }
+/* Bagian Header / Judul */
 .v3327_6 {
-  width: 100%;
-  height: 67px;
+  width: 90%; /* **PERUBAHAN:** Menggunakan 90% agar ada sedikit padding di sisi */
+  height: 67px; /* Ini masih ok, tapi mungkin perlu disesuaikan di media query */
   background: url("../images/v3327_6.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
-  position: absolute;
   top: 26px;
-  left: 19px;
+  /* **PERUBAHAN:** Menggunakan margin auto untuk memusatkan */
+  left: 5%; /* Membantu memusatkan 90% lebar */
+  right: 5%;
+  position: absolute; 
   overflow: hidden;
 }
 .v3327_7 {
@@ -61,25 +70,27 @@ body {
   left: 0px;
   font-family: Inria Serif;
   font-weight: Bold;
-  font-size: 45px;
+  /* Font size ini akan diubah di media query untuk perangkat kecil */
+  font-size: 45px; 
   opacity: 1;
   text-align: center;
 }
+/* Konten 1 (v3327_8) */
 .v3327_8 {
-  width: 618px;
+  width: 50%; /* **PERUBAHAN:** Menggunakan persentase untuk lebar */
   height: 203px;
   background: url("../images/v3327_8.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   opacity: 1;
-  position: absolute;
   top: 119px;
-  left: 59px;
+  left: 59px; /* Posisi tetap di desktop */
+  position: absolute;
   overflow: hidden;
 }
 .v3327_9 {
-  width: 618px;
+  width: 100%; /* Mengikuti lebar parent */
   height: 203px;
   background: rgba(255,255,255,0.6000000238418579);
   opacity: 1;
@@ -93,7 +104,7 @@ body {
   overflow: hidden;
 }
 .v3327_10 {
-  width: 207px;
+  width: auto; /* Mengikuti konten */
   color: rgba(0,0,0,1);
   position: absolute;
   top: 0px;
@@ -104,8 +115,9 @@ body {
   opacity: 1;
   text-align: left;
 }
+/* Area Grafik Besar (v3327_11) */
 .v3327_11 {
-  width: 865px;
+  width: 70%; /* **PERUBAHAN:** Menggunakan persentase untuk lebar */
   height: 446px;
   background: url("../images/v3327_11.png");
   background-repeat: no-repeat;
@@ -114,11 +126,11 @@ body {
   opacity: 1;
   position: absolute;
   top: 348px;
-  left: 58px;
+  left: 58px; /* Posisi tetap di desktop */
   overflow: hidden;
 }
 .v3327_12 {
-  width: 865px;
+  width: 100%;
   height: 446px;
   background: rgba(229,229,229,0.6000000238418579);
   opacity: 1;
@@ -131,8 +143,9 @@ body {
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
+/* Konten 2 (v3327_13) - Hanya contoh penyesuaian persentase */
 .v3327_13 {
-  width: 670px;
+  width: 40%; /* **PERUBAHAN:** Persentase */
   height: 203px;
   background: url("../images/v3327_13.png");
   background-repeat: no-repeat;
@@ -141,11 +154,12 @@ body {
   opacity: 1;
   position: absolute;
   top: 119px;
-  left: 709px;
+  right: 58px; /* **PERUBAHAN:** Posisi ke kanan dari desktop */
+  left: auto; /* Hapus left: 709px; */
   overflow: hidden;
 }
 .v3327_14 {
-  width: 670px;
+  width: 100%;
   height: 203px;
   background: rgba(255,255,255,0.6000000238418579);
   opacity: 1;
@@ -168,7 +182,8 @@ body {
   opacity: 1;
   position: absolute;
   top: 146px;
-  left: 472px;
+  /* left: 472px; -> Hapus ini jika menggunakan .v3327_13 yang baru */
+  right: 20px; /* Contoh posisi dari kanan parent */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
@@ -198,8 +213,9 @@ body {
   opacity: 1;
   text-align: center;
 }
+/* Sidebar/Radar Chart (v3327_18) */
 .v3327_18 {
-  width: 411px;
+  width: 25%; /* **PERUBAHAN:** Persentase */
   height: 373px;
   background: url("../images/v3327_18.png");
   background-repeat: no-repeat;
@@ -208,11 +224,12 @@ body {
   opacity: 1;
   position: absolute;
   top: 344px;
-  left: 968px;
+  right: 58px; /* **PERUBAHAN:** Posisi ke kanan dari desktop */
+  left: auto; /* Hapus left: 968px; */
   overflow: hidden;
 }
 .v3327_19 {
-  width: 411px;
+  width: 100%;
   height: 373px;
   background: rgba(217,217,217,0.6000000238418579);
   opacity: 1;
@@ -227,7 +244,7 @@ body {
   opacity: 1;
   position: absolute;
   top: 60px;
-  left: 97px;
+  left: 97px; /* Posisi tetap di desktop */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -235,7 +252,7 @@ body {
   overflow: hidden;
 }
 .v3327_21 {
-  width: 411px;
+  width: 100%; /* **PERUBAHAN:** Menggunakan 100% dari parent */
   color: rgba(0,0,0,1);
   position: absolute;
   top: 11px;
@@ -246,6 +263,7 @@ body {
   opacity: 1;
   text-align: center;
 }
+/* Tombol (v3327_181) */
 .v3327_181 {
   width: 268px;
   height: 58px;
@@ -255,8 +273,9 @@ body {
   background-size: cover;
   opacity: 1;
   position: absolute;
-  top: 735px;
-  left: 1043px;
+  bottom: 20px; /* **PERUBAHAN:** Posisi dari bawah */
+  right: 58px; /* **PERUBAHAN:** Posisi dari kanan */
+  left: auto; /* Hapus left: 1043px; */
   overflow: hidden;
 }
 .v3327_180 {
@@ -287,4 +306,77 @@ body {
   font-size: 20px;
   opacity: 1;
   text-align: left;
+}
+
+/* ==================================== */
+/* **MEDIA QUERIES (RESPONSIVE)** */
+/* ==================================== */
+
+/* Tata Letak untuk Tablet dan perangkat kecil (lebar maks 768px) */
+@media (max-width: 768px) {
+    /* Header: Kecilkan ukuran font agar muat */
+    .v3327_7 {
+      font-size: 30px; /* Font size lebih kecil dari 45px */
+    }
+
+    /* Tata Letak Berubah: Semua elemen akan disusun secara vertikal */
+    /* Kotak Konten 1 (v3327_8) */
+    .v3327_8 {
+        width: 90%; 
+        left: 5%;
+        top: 100px; /* Sesuaikan posisi agar di bawah header */
+    }
+    
+    /* Kotak Konten 2 (v3327_13) */
+    .v3327_13 {
+        /* Hilangkan elemen ini di mobile/tablet jika tidak penting */
+        display: none; 
+        /* Jika ingin tetap ditampilkan: */
+        /* width: 90%; 
+        left: 5%;
+        right: 5%;
+        top: 320px; */
+    }
+
+    /* Area Grafik Besar (v3327_11) */
+    .v3327_11 {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        top: 320px; /* Pindah ke bawah Kotak Konten 1 */
+        height: 300px; /* Kecilkan tinggi */
+    }
+    
+    /* Sidebar/Radar Chart (v3327_18) */
+    .v3327_18 {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        top: 650px; /* Pindah ke bawah Area Grafik Besar */
+        height: 300px; /* Kecilkan tinggi */
+    }
+    
+    /* Tombol (v3327_181) */
+    .v3327_181 {
+        bottom: 20px;
+        right: 50%; /* Posisikan di tengah layar */
+        transform: translateX(50%);
+    }
+
+    /* Untuk body/wadah utama: Pastikan scroll bisa dilakukan jika konten menumpuk */
+    .v3329_5, .v3327_182, .v3331_7 {
+        height: auto; /* Biarkan konten menentukan tinggi */
+        min-height: 100vh; /* Tapi minimal setinggi layar */
+        position: static;
+        overflow: visible;
+    }
+}
+
+/* Tata Letak untuk Ponsel (lebar maks 480px) */
+@media (max-width: 480px) {
+    /* Header: Ukuran font lebih kecil lagi */
+    .v3327_7 {
+      font-size: 22px; 
+    }
+    /* ... penyesuaian lain jika diperlukan ... */
 }
