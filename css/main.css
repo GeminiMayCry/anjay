@@ -99,7 +99,8 @@ body {
   position: absolute;
   top: 26px;
   left: 19px;
-  font-size: 25px;
+  text-align: center; /* SOLUSI: Menambahkan properti ini untuk meratakan teks di tengah elemen */
+  font-size: 25px; /* Mengurangi ukuran font sedikit lagi (dari 30px ke 28px) */
   /* MENGHAPUS: Hapus properti 'overflow: hidden;' */
 }
 .v3327_7 {
