@@ -252,6 +252,19 @@ body {
   opacity: 1;
   text-align: center;
 }
+.v3338_3 {
+  width: 376px;
+  height: 175px;
+  background: url("../html/scatter.html");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
 .v3327_18 {
   width: 411px;
   height: 373px;
