@@ -98,9 +98,13 @@ body {
   opacity: 1;
   position: absolute;
   top: 26px;
-  left: 19px;
-  text-align: center; /* SOLUSI: Menambahkan properti ini untuk meratakan teks di tengah elemen */
-  font-size: 25px; /* Mengurangi ukuran font sedikit lagi (dari 30px ke 28px) */
+  /* PERUBAHAN UTAMA UNTUK RATA TENGAH HORIZONTAL */
+  left: 50%; 
+  transform: translateX(-50%);
+  /* END PERUBAHAN */
+  
+  text-align: center; /* Meratakan teks di tengah elemen */
+  font-size: 25px; /* Ukuran font yang telah disesuaikan */
   /* MENGHAPUS: Hapus properti 'overflow: hidden;' */
 }
 .v3327_7 {
