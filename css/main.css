@@ -90,7 +90,7 @@ body {
 
 .v3327_6 {
   width: 100%;
-  height: 67px;
+  height: 100px; /* MENGUBAH: Naikkan tinggi agar teks dua baris muat */
   background: url("../images/v3327_6.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -99,7 +99,7 @@ body {
   position: absolute;
   top: 26px;
   left: 19px;
-  overflow: hidden;
+  /* MENGHAPUS: Hapus properti 'overflow: hidden;' */
 }
 .v3327_7 {
   width: 100%;
