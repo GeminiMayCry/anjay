@@ -213,7 +213,7 @@ body {
   z-index: 1; /* LAPISAN BAWAH (Latar) */
 }
 
-/* IFRAME PLOT SILHOUETTE */
+/* IFRAME PLOT SILHOUETTE - MEMASTIKAN UKURAN 100% */
 .v3327_13 .chart-iframe {
   width: 100%;
   height: 100%;
@@ -224,6 +224,7 @@ body {
   border: none;
   padding: 0;
   margin: 0;
+  overflow: hidden; /* Tambahkan ini untuk memastikan pemotongan konten */
 }
 
 /* TOMBOL SHIL SCORE */
@@ -299,24 +300,6 @@ body {
   z-index: 1; /* LAPISAN BAWAH (Latar) */
 }
 
-/* IFRAME RADAR PLOT */
-.v3327_18 .radar-iframe {
-  width: 90%;
-  height: 85%;
-  background: transparent;
-  opacity: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -40%); /* Pusatkan dan angkat sedikit agar ada ruang judul */
-  border-radius: 20px; 
-  overflow: hidden;
-  z-index: 2; /* LAPISAN TENGAH (Plot) */
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
 /* JUDUL RADAR CHART */
 .v3327_21 {
   width: 100%;
@@ -330,6 +313,24 @@ body {
   opacity: 1;
   text-align: center;
   z-index: 3; /* LAPISAN ATAS (Judul) */
+}
+
+/* IFRAME RADAR PLOT - PERBAIKAN: Mengambil sisa ruang di bawah judul */
+.v3327_18 .radar-iframe {
+  width: 100%;
+  height: calc(100% - 40px); /* 100% tinggi dikurangi 40px untuk ruang judul */
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: 40px; /* Mulai 40px dari atas */
+  left: 0;
+  transform: none; /* Hapus transform yang menyebabkan offset tidak terduga */
+  border-radius: 20px; 
+  overflow: hidden;
+  z-index: 2; /* LAPISAN TENGAH (Plot) */
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* KOTAK TOMBOL BAWAH */
