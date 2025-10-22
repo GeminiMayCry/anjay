@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link href="https://fonts.googleapis.com/css?family=Inria+Serif&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
@@ -12,17 +12,49 @@
 <div class="v3329_5">
 <div class="v3327_182">
 <div class="v3331_7"></div>
-<!-- PERBAIKAN: Menambahkan <br> untuk pemisahan baris yang rapi -->
+
+<!-- JUDUL UTAMA -->
 <div class="v3327_6">
-    <span class="v3327_7">
-        Dashboard Kesenjangan Fasilitas Komunikasi antar Kabupaten/Kota <br>
-        di Jawa Timur
-    </span>
+    <span class="v3327_7">
+        Dashboard Kesenjangan Fasilitas Komunikasi antar Kabupaten/Kota <br>
+        di Jawa Timur
+    </span>
 </div>
+
 <div class="v3327_8"><div class="v3327_9"></div><span class="v3327_10">Kesimpulan utama</span></div>
 <div class="v3327_11"><div class="v3327_12"></div></div>
-<div class="v3327_13"><div class="v3327_14"></div><div class="v3327_15"><div class="v3327_16"></div><span class="v3327_17">shil score</span><div class="v338_3"></div></div>
-<div class="v3327_18"><div class="v3327_19"></div><div class="v3327_20"></div><span class="v3327_21">Radar Chart Rata-rata  variabel dari tiap Klaster</span></div>
+
+<!-- KOTAK CHART SILHOUETTE (v3327_13) - KANAN ATAS -->
+<div class="v3327_13">
+    <div class="v3327_14"></div> <!-- Lapisan 1: Latar Buram -->
+    
+    <!-- LAPISAN 2: IFRAME PLOT SILHOUETTE (Pastikan src="pca_plot_KMeans_k2.html" benar) -->
+    <iframe src="pca_plot_KMeans_k2.html" class="chart-iframe" 
+            frameborder="0" title="Silhouette Plot"></iframe>
+    
+    <!-- Lapisan 3: Tombol Shil Score -->
+    <div class="v3327_15">
+        <div class="v3327_16"></div>
+        <span class="v3327_17">shil score</span>
+    </div>
+</div>
+<!-- END SILHOUETTE PLOT -->
+
+
+<!-- KOTAK RADAR CHART (v3327_18) - KANAN BAWAH -->
+<div class="v3327_18">
+    <div class="v3327_19"></div> <!-- Lapisan 1: Latar Buram -->
+    
+    <!-- LAPISAN 2: IFRAME RADAR CHART (Pastikan src="radar_plot.html" benar) -->
+    <iframe src="radar_plot.html" class="radar-iframe" 
+            frameborder="0" title="Radar Chart"></iframe>
+            
+    <!-- Lapisan 3: Judul Chart -->
+    <span class="v3327_21">Radar Chart Rata-rata  variabel dari tiap Klaster</span>
+</div>
+<!-- END RADAR CHART -->
+
+
 <div class="v3327_181"><div class="v3327_180"></div><div class="name"></div><span class="v3327_172">All About Me ?</span></div>
 </div>
 </div>
