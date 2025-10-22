@@ -1,53 +1,54 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-  font-size: 14px;
-  margin: 0; 
-  padding: 0;
-  overflow-x: hidden;
-  background: black; /* Warna "border" luar */
-  min-height: 100vh;
+  font-size: 14px;
+  /* PERUBAHAN UTAMA UNTUK BORDER HITAM OTOMATIS */
+  margin: 0; 
+  padding: 0;
+  overflow-x: hidden;
+  background: black; /* WARNA BORDER LUAR */
+  min-height: 100vh; /* Pastikan body setinggi viewport */
 }
 
 /* WADAH UTAMA YANG DISKALAKAN (FIXED SIZE) */
 .v3329_5 {
-  width: 1440px; 
-  height: 822px; 
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: fixed; /* DIGANTI ke FIXED */
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  transform-origin: top left; 
+  width: 1440px; 
+  height: 822px; 
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: fixed; /* DIGANTI DARI absolute ke FIXED */
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform-origin: top left; 
 }
 /* BACKGROUNDS (DIUBAH KE UKURAN TETAP 1440x822) */
 .v3327_182 {
-  width: 1440px;
-  height: 822px;
-  /* background: url("../images/v3327_182.png"); - Dihapus jika tidak ada gambar */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+  width: 1440px; /* FIXED SIZE */
+  height: 822px; /* FIXED SIZE */
+  background: url("../images/v3327_182.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
 }
 .v3331_7 {
-  width: 1440px;
-  height: 822px;
-  /* background: url("../images/v3331_7.png"); - Dihapus jika tidak ada gambar */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+  width: 1440px; /* FIXED SIZE */
+  height: 822px; /* FIXED SIZE */
+  background: url("../images/v3331_7.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
 }
 
 /* ==================================== */
@@ -56,322 +57,290 @@ body {
 
 /* Aturan untuk layar yang lebih kecil atau sama dengan lebar desain (<= 1440px) */
 @media screen and (max-width: 1440px) {
-    .v3329_5 {
-        /* Definisikan faktor skala */
-        --scale-factor: calc(100vw / 1440);
-        transform: scale(var(--scale-factor));
-        /* PEMUSATAN OTOMATIS (Mencegah tampilan terpotong di layar yang sangat lebar) */
-        left: calc((100vw - 1440px * var(--scale-factor)) / 2);
-        top: calc((100vh - 822px * var(--scale-factor)) / 2);
-        margin-left: 0;
-        margin-top: 0;
-    }
+    .v3329_5 {
+        /* Definisikan faktor skala */
+        --scale-factor: calc(100vw / 1440);
+        transform: scale(var(--scale-factor));
+        
+        /* PEMUSATAN OTOMATIS */
+        left: calc((100vw - 1440px * var(--scale-factor)) / 2); /* Horizontal */
+        top: calc((100vh - 822px * var(--scale-factor)) / 2);    /* Vertikal */
+        
+        margin-left: 0;
+        margin-top: 0;
+    }
 }
 
 /* Aturan untuk layar yang LEBIH BESAR dari 1440px */
 @media screen and (min-width: 1441px) {
-    .v3329_5 {
-        transform: none; 
-        /* Pusatkan di Layar Besar */
-        left: 50%;
-        top: 50%;
-        margin-left: -720px; /* - (1440px / 2) */
-        margin-top: -411px; /* - (822px / 2) */
-    }
+    .v3329_5 {
+        transform: none; 
+        
+        /* Pusatkan di Layar Besar */
+        left: 50%;
+        top: 50%;
+        margin-left: -720px; 
+        margin-top: -411px; 
+    }
 }
 
 /* ==================================== */
-/* KONTEN UTAMA */
+/* SEMUA ELEMEN KONTEN LAINNYA (TETAP MENGGUNAKAN PIXEL ASLI) */
 /* ==================================== */
 
-/* JUDUL UTAMA */
 .v3327_6 {
-  width: 100%;
-  height: 100px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 26px;
-  left: 50%; 
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 10; 
+  width: 100%;
+  height: 100px; /* MENGUBAH: Naikkan tinggi agar teks dua baris muat */
+  background: url("../images/v3327_6.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 26px;
+  /* PERUBAHAN UTAMA UNTUK RATA TENGAH HORIZONTAL */
+  left: 50%; 
+  transform: translateX(-50%);
+  /* END PERUBAHAN */
+  
+  text-align: center; /* Meratakan teks di tengah elemen */
+  font-size: 20px; /* Ukuran font yang telah disesuaikan */
+  /* MENGHAPUS: Hapus properti 'overflow: hidden;' */
 }
 .v3327_7 {
-  width: 100%;
-  color: rgba(249,156,6,1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-family: Inria Serif;
-  font-weight: Bold;
-  font-size: 22px; /* Ukuran font disesuaikan */
-  opacity: 1;
-  text-align: center;
-  display: block;
+  width: 100%;
+  color: rgba(249,156,6,1);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-family: Inria Serif;
+  font-weight: Bold;
+  font-size: 35px;
+  opacity: 1;
+  text-align: center;
 }
-
-/* KOTAK KESIMPULAN UTAMA (KIRI ATAS) */
 .v3327_8 {
-  width: 618px;
-  height: 203px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 119px;
-  left: 59px;
-  overflow: hidden;
+  width: 618px;
+  height: 203px;
+  background: url("../images/v3327_8.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 119px;
+  left: 59px;
+  overflow: hidden;
 }
 .v3327_9 {
-  width: 618px;
-  height: 203px;
-  background: rgba(255,255,255,0.6000000238418579);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
+  width: 618px;
+  height: 203px;
+  background: rgba(255,255,255,0.6000000238418579);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 .v3327_10 {
-  width: 207px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 0px;
-  left: 21px;
-  font-family: Inria Serif;
-  font-weight: Regular;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
+  width: 207px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 0px;
+  left: 21px;
+  font-family: Inria Serif;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
 }
-
-/* KOTAK BESAR DI KIRI BAWAH */
 .v3327_11 {
-  width: 865px;
-  height: 446px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 348px;
-  left: 58px;
-  overflow: hidden;
+  width: 865px;
+  height: 446px;
+  background: url("../images/v3327_11.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 348px;
+  left: 58px;
+  overflow: hidden;
 }
 .v3327_12 {
-  width: 865px;
-  height: 446px;
-  background: rgba(229,229,229,0.6000000238418579);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
+  width: 865px;
+  height: 446px;
+  background: rgba(229,229,229,0.6000000238418579);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
-
-/* ==================================== */
-/* PLOT SILHOUETTE (KANAN ATAS) */
-/* ==================================== */
 .v3327_13 {
-  width: 670px;
-  height: 203px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 119px;
-  left: 709px;
-  overflow: hidden;
-  position: relative; /* PENTING: Wadah penumpukan untuk elemen anak */
+  width: 670px;
+  height: 203px;
+  background: url("../images/v3327_13.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 119px;
+  left: 709px;
+  overflow: hidden;
 }
 .v3327_14 {
-  width: 100%; 
-  height: 100%; 
-  background: rgba(255,255,255,0.6000000238418579);
-  opacity: 1;
-  position: absolute; 
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
-  z-index: 1; /* LAPISAN BAWAH (Latar) */
+  width: 670px;
+  height: 203px;
+  background: rgba(255,255,255,0.6000000238418579);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
-
-/* IFRAME PLOT SILHOUETTE - MEMASTIKAN UKURAN 100% */
-.v3327_13 .chart-iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute; 
-  top: 0;
-  left: 0;
-  z-index: 2; /* LAPISAN TENGAH (Plot) */
-  border: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden; /* Tambahkan ini untuk memastikan pemotongan konten */
-}
-
-/* TOMBOL SHIL SCORE */
 .v3327_15 {
-  width: 166px;
-  height: 23px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  margin-top: 15px; /* Offset dari atas */
-  margin-right: 15px; /* Offset dari kanan */
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  z-index: 3; /* LAPISAN ATAS (Tombol) */
+  width: 166px;
+  height: 23px;
+  background: url("../images/v3327_15.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 146px;
+  left: 472px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 .v3327_16 {
-  width: 166px;
-  height: 23px;
-  background: rgba(222,139,6,1);
-  opacity: 0.75;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  overflow: hidden;
+  width: 166px;
+  height: 23px;
+  background: rgba(222,139,6,1);
+  opacity: 0.75;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  overflow: hidden;
 }
 .v3327_17 {
-  width: 115px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 0px;
-  left: 25px;
-  font-family: Inter;
-  font-weight: Medium;
-  font-size: 20px;
-  opacity: 1;
-  text-align: center;
+  width: 115px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
 }
-
-/* ==================================== */
-/* RADAR CHART (KANAN BAWAH) */
-/* ==================================== */
 .v3327_18 {
-  width: 411px;
-  height: 373px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 344px;
-  left: 968px;
-  overflow: hidden;
-  position: relative; /* PENTING: Wadah penumpukan untuk elemen anak */
+  width: 411px;
+  height: 373px;
+  background: url("../images/v3327_18.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 344px;
+  left: 968px;
+  overflow: hidden;
 }
 .v3327_19 {
-  width: 411px;
-  height: 373px;
-  background: rgba(217,217,217,0.6000000238418579);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 20px; 
-  overflow: hidden;
-  z-index: 1; /* LAPISAN BAWAH (Latar) */
+  width: 411px;
+  height: 373px;
+  background: rgba(217,217,217,0.6000000238418579);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px; 
+  overflow: hidden;
 }
-
-/* JUDUL RADAR CHART */
+.v3327_20 {
+  width: 217px;
+  height: 207px;
+  background: rgba(0,0,0,0.6000000238418579);
+  opacity: 1;
+  position: absolute;
+  top: 60px;
+  left: 97px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
 .v3327_21 {
-  width: 100%;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 11px;
-  left: 0px;
-  font-family: Inria Serif;
-  font-weight: Regular;
-  font-size: 20px;
-  opacity: 1;
-  text-align: center;
-  z-index: 3; /* LAPISAN ATAS (Judul) */
+  width: 411px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 11px;
+  left: 0px;
+  font-family: Inria Serif;
+  font-weight: Regular;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
 }
-
-/* IFRAME RADAR PLOT - PERBAIKAN: Mengambil sisa ruang di bawah judul */
-.v3327_18 .radar-iframe {
-  width: 100%;
-  height: calc(100% - 40px); /* 100% tinggi dikurangi 40px untuk ruang judul */
-  background: transparent;
-  opacity: 1;
-  position: absolute;
-  top: 40px; /* Mulai 40px dari atas */
-  left: 0;
-  transform: none; /* Hapus transform yang menyebabkan offset tidak terduga */
-  border-radius: 20px; 
-  overflow: hidden;
-  z-index: 2; /* LAPISAN TENGAH (Plot) */
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* KOTAK TOMBOL BAWAH */
 .v3327_181 {
-  width: 268px;
-  height: 58px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 735px;
-  left: 1043px;
-  overflow: hidden;
+  width: 268px;
+  height: 58px;
+  background: url("../images/v3327_181.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 735px;
+  left: 1043px;
+  overflow: hidden;
 }
 .v3327_180 {
-  width: 268px;
-  height: 58px;
-  background: rgba(56,41,25,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
-  overflow: hidden;
+  width: 268px;
+  height: 58px;
+  background: rgba(56,41,25,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  overflow: hidden;
 }
 .name {
-  color: #fff;
+  color: #fff;
 }
 .v3327_172 {
-  width: 136px;
-  color: rgba(255,141,40,1);
-  position: absolute;
-  top: 16px;
-  left: 96px;
-  font-family: Roboto;
-  font-weight: Medium;
-  font-size: 20px;
-  opacity: 1;
-  text-align: left;
+  width: 136px;
+  color: rgba(255,141,40,1);
+  position: absolute;
+  top: 16px;
+  left: 96px;
+  font-family: Roboto;
+  font-weight: Medium;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
 }
